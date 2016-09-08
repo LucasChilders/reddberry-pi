@@ -1,6 +1,8 @@
 import praw
 import sys
 from time import strftime
+import datetime
+
 from kivy.config import Config
 
 Config.set('graphics', 'fullscreen', 'auto')
@@ -13,6 +15,7 @@ from kivy.uix.listview import ListView
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.button import Button
 from kivy.uix.scrollview import ScrollView
+from kivy.clock import Clock
 
 Config.set('graphics', 'fullscreen', 'auto')
 
@@ -44,6 +47,7 @@ class MainView(GridLayout):
                         size_hint_y = None)
 
         layout.bind(minimum_height=layout.setter('height'))
+
         def drawRefresh():
             refresh = Button(
                             text = "refresh\nlast refresh - " + strftime("%I:%M:%S"),
@@ -158,6 +162,9 @@ class MainView(GridLayout):
                                 halign='left',
                                 valign='middle',
                                 background_color= (240, 240, 240, .1)))
+
+
+        event = Clock.schedule_interval(callback, 120)
 
         root = ScrollView()
         root.add_widget(layout)
