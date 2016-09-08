@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 reddberry-pi
 ======
 Intended to be used on the Raspberry Pi as a way to view Reddit posts from
@@ -8,4 +7,3 @@ which subreddit to display.
 ## Dependencies
 * [PRAW](https://praw.org/)
 * [Kivy](https://praw.readthedocs.io/en/stable/)
->>>>>>> 2581e3db7ed8db5adc43e927bb2daaba06d8cf54
